@@ -20,10 +20,18 @@
     "jsonwebtoken": "^7.3.0",
     "mongojs": "^2.4.0",
     "mongoose": "^4.8.4",
-    "safe-json-stringify": "^1.0.4"
+    "safe-json-stringify": "^1.0.4",
+    "cron-parser": "1.1.0",
+    "long-timeout": "0.1.1",
+    "sorted-array-functions": "^1.0.0"
   },
   "devDependencies": {
-    "bcrypt": "^1.0.2"
+    "bcrypt": "^1.0.2",
+    "coveralls": "^2.11.2",
+    "eslint": "^0.15.1",
+    "istanbul": "^0.4.5",
+    "nodeunit": "^0.10.2",
+    "sinon": "^1.14.1"
   },
   "engines": {
   "node": "5.1.0",

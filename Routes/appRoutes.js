@@ -22,51 +22,51 @@ mongodb.MongoClient.connect(MONGODB_URI, function(err, database){
 });
 
 
-// var index = 0;
-// var indexTwo;
-// var arrayAll = [];
+var index = 0;
+var indexTwo;
+var arrayAll = [];
 
-// schedule.scheduleJob('0 */59 */23 * * 1-5', () => {
-// 	var array = [];
-// 	var responsible;
-// 	var responsibleSetFalse;
-// 	collUsers.find().toArray(function(err, users){
-// 		users.forEach(function(value){
-//   			array.push(value.email);
-//   			value.responsible = false;
-//   			collUsers.save(value);
-// 		});
-// 		console.log(array);
-// 		responsible = array[index];
-// 		if (index > 0) {
-// 			indexTwo = index -1;
-// 		}else if (indexTwo = array.length-1) {
-// 			index = 0;
-// 		}else {
-// 			index = 0;
-// 		}
-// 		responsibleSetFalse = array[indexTwo];
-// 		console.log("true: " + responsible);
-// 		console.log("false: " + responsibleSetFalse);
-// 		console.log("false: " + indexTwo);
-// 		console.log("true: " + index);
-// 		console.log(new Date())
-// 		if (index < array.length-1) {
-// 			index += 1;
-// 		}else {
-// 			index = 0;
-// 		}
-// 		collUsers.find({"email": responsible}).toArray(function(err, user){
-// 			user[0].responsible = true;
-// 			collUsers.save(user[0]);
-// 		});
-// 		collUsers.find({"email": responsibleSetFalse}).toArray(function(err, user){
-// 			user[0].responsible = false;
-// 			collUsers.save(user[0]);
-// 		});
-// 		array = [];
-// 	});
-// });
+schedule.scheduleJob('0 */59 */23 * * 1-5', () => {
+	var array = [];
+	var responsible;
+	var responsibleSetFalse;
+	collUsers.find().toArray(function(err, users){
+		users.forEach(function(value){
+  			array.push(value.email);
+  			value.responsible = false;
+  			collUsers.save(value);
+		});
+		console.log(array);
+		responsible = array[index];
+		if (index > 0) {
+			indexTwo = index -1;
+		}else if (indexTwo = array.length-1) {
+			index = 0;
+		}else {
+			index = 0;
+		}
+		responsibleSetFalse = array[indexTwo];
+		console.log("true: " + responsible);
+		console.log("false: " + responsibleSetFalse);
+		console.log("false: " + indexTwo);
+		console.log("true: " + index);
+		console.log(new Date())
+		if (index < array.length-1) {
+			index += 1;
+		}else {
+			index = 0;
+		}
+		collUsers.find({"email": responsible}).toArray(function(err, user){
+			user[0].responsible = true;
+			collUsers.save(user[0]);
+		});
+		collUsers.find({"email": responsibleSetFalse}).toArray(function(err, user){
+			user[0].responsible = false;
+			collUsers.save(user[0]);
+		});
+		array = [];
+	});
+});
 
 
 var routes = function(Checkin, Checkout, Event, User, Sandwiche, Room, secret){
